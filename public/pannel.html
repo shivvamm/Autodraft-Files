@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Right Panel UI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="max-w-md mx-auto p-4 bg-white shadow-lg rounded-lg">
+      <div class="flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/40"
+          alt="Profile"
+          class="w-10 h-10 rounded-full"
+        />
+        <div class="ml-3">
+          <h2 class="text-lg font-semibold">Yiğit Konur</h2>
+          <p class="text-gray-500 text-sm">
+            Product Marketing Manager & 16+ yrs...
+          </p>
+        </div>
+      </div>
+      <div class="mb-4">
+        <h4 class="text-gray-700 font-semibold">Email(s)</h4>
+        <div class="flex items-center bg-gray-100 p-2 rounded-lg">
+          <input
+            type="text"
+            readonly
+            value="yigit@wope.com"
+            class="w-full bg-transparent text-gray-800 font-medium focus:outline-none"
+          />
+          <button onclick="copyToClipboard()" class="ml-2 text-purple-500">
+            Copied!
+          </button>
+        </div>
+      </div>
+      <div class="mb-4">
+        <h4 class="text-gray-700 font-semibold">Phone number(s)</h4>
+        <div class="space-y-2">
+          <div class="flex items-center bg-gray-100 p-2 rounded-lg">
+            <input
+              type="text"
+              readonly
+              value="+1 (234) 567-8910"
+              class="w-full bg-transparent text-gray-800 font-medium focus:outline-none"
+            />
+          </div>
+          <div class="flex items-center bg-gray-100 p-2 rounded-lg">
+            <input
+              type="text"
+              readonly
+              value="+1 (789) 123-4567"
+              class="w-full bg-transparent text-gray-800 font-medium focus:outline-none"
+            />
+          </div>
+        </div>
+      </div>
+      <button
+        class="w-full py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+      >
+        Save to list
+      </button>
+    </div>
+
+    <script>
+      function copyToClipboard() {
+        const input = document.querySelector('input[value="yigit@wope.com"]');
+        input.select();
+        document.execCommand("copy");
+        alert("Email copied to clipboard!");
+      }
+    </script>
+  </body>
+</html>
